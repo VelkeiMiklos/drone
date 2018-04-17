@@ -15,6 +15,7 @@
 		F5A1791B20864F75001CED2D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1791A20864F75001CED2D /* UIViewExt.swift */; };
 		F5A1791D20865142001CED2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1791C20865142001CED2D /* Constants.swift */; };
 		F5A1792120865546001CED2D /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1792020865546001CED2D /* PageCell.swift */; };
+		F5A1792420865AA2001CED2D /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A1792320865AA2001CED2D /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F5A1791A20864F75001CED2D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		F5A1791C20865142001CED2D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5A1792020865546001CED2D /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		F5A1792320865AA2001CED2D /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		F5A1790520864CF0001CED2D /* drone */ = {
 			isa = PBXGroup;
 			children = (
+				F5A1792220865A90001CED2D /* Model */,
 				F5A1791F20865538001CED2D /* View */,
 				F5A1791E20865532001CED2D /* Controller */,
 				F5A1790620864CF0001CED2D /* AppDelegate.swift */,
@@ -87,6 +90,14 @@
 				F5A1792020865546001CED2D /* PageCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F5A1792220865A90001CED2D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5A1792320865AA2001CED2D /* Page.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			files = (
 				F5A1791B20864F75001CED2D /* UIViewExt.swift in Sources */,
 				F5A1792120865546001CED2D /* PageCell.swift in Sources */,
+				F5A1792420865AA2001CED2D /* Page.swift in Sources */,
 				F5A1790920864CF0001CED2D /* ViewController.swift in Sources */,
 				F5A1790720864CF0001CED2D /* AppDelegate.swift in Sources */,
 				F5A1791D20865142001CED2D /* Constants.swift in Sources */,

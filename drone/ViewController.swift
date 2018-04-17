@@ -17,12 +17,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.minimumLineSpacing = 0 // cellák között a space
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.isPagingEnabled = true
-        cv.backgroundColor = .red
+        cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
         return cv
     }()
 
+    //Login oldalak beállítása
+    let pages: [Page] = {
+        let firstPage = Page(title: "Mavic Air", message: "A legújabb drón. Kicsi a bors de erős", imageName: "mavicair")
+        
+        let secondPage = Page(title: "Mavic Pro", message: "Az első hórdozható drón", imageName: "mavicpro")
+        
+        let thirdPage = Page(title: "Phantom 4", message: "Legjobb drón professzionális felhasználásra 4k videó", imageName: "phantom4")
+        
+        return [firstPage, secondPage, thirdPage]
+    }()
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
@@ -36,12 +49,13 @@ extension ViewController{
     
     //4db
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.LOGIN_CELL_ID, for: indexPath)
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.LOGIN_CELL_ID, for: indexPath) as! PageCell
+        let page = pages[indexPath.item]
+        cell.page = page
         return cell
     }
     
