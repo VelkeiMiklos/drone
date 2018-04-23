@@ -57,7 +57,7 @@ class PageCell: UICollectionViewCell{
         tv.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
         return tv
     }()
-    
+
     //Elválasztó vonal
     let lineSeparatorView: UIView = {
         let view = UIView()

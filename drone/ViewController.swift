@@ -26,21 +26,56 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //Login oldalak beállítása
     let pages: [Page] = {
         let firstPage = Page(title: "Mavic Air", message: "A legújabb drón. Kicsi a bors de erős", imageName: "mavicair")
-        
         let secondPage = Page(title: "Mavic Pro", message: "Az első hórdozható drón", imageName: "mavicpro")
-        
         let thirdPage = Page(title: "Phantom 4", message: "Legjobb drón professzionális felhasználásra 4k videó", imageName: "phantom4")
-        
         return [firstPage, secondPage, thirdPage]
     }()
+ 
     
+    //PageControl
+    let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.numberOfPages = 3
+        pc.currentPageIndicatorTintColor = UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1)
+        pc.pageIndicatorTintColor = .lightGray
+        return pc
+    }()
+    
+    lazy var skipButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Skip", for: .normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(skip), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func skip() {
 
+//        pageControl.currentPage = pages.count - 1
+//        nextPage()
+    }
+    
+    lazy var nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Next", for: .normal)
+        button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+   //     button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        return button
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(collectionView)
+        view.addSubview(pageControl)
+        view.addSubview(skipButton)
+        view.addSubview(nextButton)
+        
+        pageControl.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        skipButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        nextButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         collectionView.frame = view.frame
-        collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        collectionView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: Cell.LOGIN_CELL_ID)
     }
 
