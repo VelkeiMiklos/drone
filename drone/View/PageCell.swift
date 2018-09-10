@@ -11,6 +11,7 @@ import UIKit
 class PageCell: UICollectionViewCell{
     
     //teszt
+    //teszt
     var page: Page?{
         didSet{
             guard let page = page else {
